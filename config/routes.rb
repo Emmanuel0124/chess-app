@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   # root "articles#index"
 
   get "/games" => "games#index"
+  post "/games" => "games#create"
 
   post "/users" => "users#create"
   post "/sessions" => "sessions#create"
