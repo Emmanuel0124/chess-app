@@ -11,7 +11,14 @@ class GamesController < ApplicationController
       image_url: params[:image_url],
     )
     render :show
-
   end
+
+  def show
+    @game = Game.find_by(id: params[:id])
+    render :show
+  end
+
+
+
 
 end
