@@ -1,5 +1,6 @@
 class GamesController < ApplicationController
   def index
+    p current_user
     @games = Game.all
     render :index
   end
