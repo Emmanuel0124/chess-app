@@ -5,13 +5,18 @@ class GamesController < ApplicationController
     render :index
   end
 
+  def new
+    @game = Game.new
+    render :new
+  end
+
   def create
     @game = Game.create(
-      result: params[:result],
-      winner: params[:winner],
-      image_url: params[:image_url],
+      result: params[:game][:result],
+      winner: params[:game][:winner],
+      image_url: params[:game][:image_url],
     )
-    render :show
+    redirect_to "/games"
   end
 
   def show
@@ -19,15 +24,20 @@ class GamesController < ApplicationController
     render :show
   end
 
+  def edit
+    @game = Game.find_by(id: params[:id])
+    render :edit
+  end
+
   def update
     @game = Game.find_by(id: params[:id])
     @game.update(
-      result: params[:result],
-      winner: params[:winner],
-      image_url: params[:image_url],
+      result: params[:game][:result],
+      winner: params[:game][:winner],
+      image_url: params[:game][:image_url]
     )
-    render :show
-  end
+    redirect_to "/games"
+  end 
 
 
 
