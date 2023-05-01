@@ -14,8 +14,8 @@ Rails.application.routes.draw do
   resources :users
   resources :sessions
 
-  post "/users" => "users#create"
-  post "/sessions" => "sessions#create"
+  # post "/users" => "users#create"
+  # post "/sessions" => "sessions#create"
 
 
 end
