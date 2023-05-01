@@ -4,10 +4,15 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
 
-  get "/games" => "games#index"
-  get "/games/:id" => "games#show"
-  post "/games" => "games#create"
-  patch "/games/:id" => "games#update"
+  resources :games 
+
+  # get "/games" => "games#index"
+  # get "/games/:id" => "games#show"
+  # post "/games" => "games#create"
+  # patch "/games/:id" => "games#update"
+
+  resources :users
+  resources :sessions
 
   post "/users" => "users#create"
   post "/sessions" => "sessions#create"
