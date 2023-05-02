@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
   end
 
   def authenticate_admin
-    unless current_user
+    unless current_user && current_user.admin
       render json: {messsage: "Request Denied"}, status: :unauthorized
     end
   end
