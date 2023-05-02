@@ -13,7 +13,8 @@ class UsersController < ApplicationController
       password_confirmation: params[:user][:password_confirmation],
     )
     if @user.save
-      render json: { message: "User created successfully" }, status: :created
+      redirect_to "/games"
+      # render json: { message: "User created successfully" }, status: :created
     else
       render :new, status: :unprocessable_entity
     end
@@ -32,7 +33,7 @@ class UsersController < ApplicationController
       password: params[:user][:password],
       password_confirmation: params[:user][:password_confirmation],
     )
-    redirect_to "/games"
+    
   end
 
 end 
