@@ -1,0 +1,18 @@
+<div class="container">
+<%= form_with model: @game do |form| %>
+   <h1> New Game </h1>
+    <div class="mb-3">
+      <label for="result" class="form-label">Result</label>
+      <%= form.text_field :result, class: "form-control", id: "result", placeholder: "CheckMate-Draw-Loss?" %>
+    </div>
+    <div class="mb-3">
+      <label for="winner" class="form-label">Winner</label>
+      <%= form.text_field :winner, class: "form-control", id: "winner", placeholder: "Your name?" %>
+    </div>
+    <div class="mb-3">
+      <label for="image_url" class="form-label">GIF URL</label>
+      <%= form.text_field :image_url, class: "form-control", id: "image_url", placeholder: "GIF URL" %>
+    </div>
+    <%= form.submit "Submit", class: "btn btn-success btn-lg" %>
+  <% end %>
+</div>
