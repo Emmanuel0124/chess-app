@@ -1,0 +1,18 @@
+<div class="container">
+<%= form_with method: "post", url: "/sessions" do |form| %>  
+  <h1>Login</h1>
+    <div class="mb-3">
+      <label for="email" class="form-label">Email address</label>
+       <%= form.email_field :email, class: "form-control", placeholder: "Email Address", required: "required" %>
+      <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Password</label>
+      <%= form.password_field :password, class: "form-control", placeholder: "Password", required: "required" %>
+    </div>
+    <div class="mb-3 form-check">
+      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+      <label class="form-check-label" for="exampleCheck1">Remember my Password</label>
+    </div>
+    <%= form.submit "Submit", class: "btn btn-success btn-lg" %>
+<%end%>
