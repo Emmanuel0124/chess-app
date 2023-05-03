@@ -1,44 +1,40 @@
-<div class="container">
-<%= form_with model: @user do |form| %>
-<div class="signup-form">
-  <%= form_for @user, url: {action: "create"}, html: {class: "form-horizontal"} do |f| %>
-    <h2>Sign Up</h2>
-    <p>Please fill in this form to create an account!</p>
-    <hr>
-    <div class="form-group">
-      <div class="input-group">
-        <span class="input-group-addon"><i class="fa fa-user"></i></span>
-        <%= f.text_field :name, class: "form-control", placeholder: "Username", required: "required" %>
-      </div>
+<%= form_with(model: @user, url: { action: "create" }, html: { class: "form-horizontal" }) do |form| %>
+  <h2>Sign Up</h2>
+  <p>Please fill in this form to create an account!</p>
+  <hr>
+  <div class="form-group mb-3">
+    <%= form.label :name, class: "form-label" %>
+    <div class="input-group">
+      <span class="input-group-addon"><i class="fa fa-user"></i></span>
+      <%= form.text_field :name, class: "form-control", placeholder: "Username", required: "required" %>
     </div>
-    <div class="form-group">
-      <div class="input-group">
-        <span class="input-group-addon"><i class="fa fa-paper-plane"></i></span>
-        <%= f.email_field :email, class: "form-control", placeholder: "Email Address", required: "required" %>
-      </div>
+  </div>
+  <div class="form-group mb-3">
+    <%= form.label :email, class: "form-label" %>
+    <div class="input-group">
+      <span class="input-group-addon"><i class="fa fa-paper-plane"></i></span>
+      <%= form.email_field :email, class: "form-control", placeholder: "Email Address", required: "required" %>
     </div>
-    <div class="form-group">
-      <div class="input-group">
-        <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-        <%= f.password_field :password, class: "form-control", placeholder: "Password", required: "required" %>
-      </div>
+  </div>
+  <div class="form-group mb-3">
+    <%= form.label :password, class: "form-label" %>
+    <div class="input-group">
+      <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+      <%= form.password_field :password, class: "form-control", placeholder: "Password", required: "required" %>
     </div>
-    <div class="form-group">
-      <div class="input-group">
-        <span class="input-group-addon">
-          <i class="fa fa-lock"></i>
-          <i class="fa fa-check"></i>
-        </span>
-        <%= f.password_field :password_confirmation, class: "form-control", placeholder: "Confirm Password", required: "required" %>
-      </div>
+  </div>
+  <div class="form-group mb-3">
+    <%= form.label :password_confirmation, class: "form-label" %>
+    <div class="input-group">
+      <span class="input-group-addon">
+        <i class="fa fa-lock"></i>
+        <i class="fa fa-check"></i>
+      </span>
+      <%= form.password_field :password_confirmation, class: "form-control", placeholder: "Confirm Password", required: "required" %>
     </div>
-    </div>
-    <div class="form-group">
-      <%= f.submit "Sign Up", class: "btn btn-success btn-lg" %>
-    </div>
-  <% end %>
+  </div>
+  <div class="form-group">
+    <%= form.submit "Sign Up", class: "btn btn-success btn-lg" %>
+  </div>
   <div class="text-center">Already have an account? <%= link_to "Login here", "/login" %></div>
-</div>
 <% end %>
-
-
