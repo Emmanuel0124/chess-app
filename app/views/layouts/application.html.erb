@@ -11,6 +11,11 @@
     <a class="nav-link" href="/games">Home</a>
   </li>
   <li class="nav-item">
+   <% if current_user %>
+   <a class="nav-link active" aria-current="page" href="/logout">Log Out</a>
+   <% end %>
+   </li>
+  <li class="nav-item">
     <a class="nav-link active" aria-current="page" href="/signup">Sign up</a>
   </li>
   <li class="nav-item">
