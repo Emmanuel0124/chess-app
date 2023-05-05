@@ -15,4 +15,39 @@
     </div>
     </div>
   </div>
+
+  <section style="background-color: #eee;">
+  <div class="container my-5 py-5">
+    <div class="row d-flex justify-content-center">
+      <div class="col-md-12 col-lg-10 col-xl-8">
+        <div class="card">
+          <div class="card-body">
+            <p class="mt-3 mb-4 pb-2">
+              other comments on game ?
+            </p>
+            <div class="small d-flex justify-content-start">
+              <a href="#!" class="d-flex align-items-center me-3">
+                <i class="far fa-comment-dots me-2"></i>
+                <p class="mb-0">Comment</p>
+              </a>
+            </div>
+          </div>
+          <%= form_with model: @comment do |form| %>
+            <div class="card-footer py-3 border-0" style="background-color: #f8f9fa;">
+              <%= form.text_area :content, class: "form-control", id: "textAreaExample", rows: "4", style: "background: #fff;" %>
+              <%= form.label :content, class: "form-label", for: "textAreaExample" do %>
+                Message
+              <% end %>
+            </div>
+            <div class="float-end mt-2 pt-1">
+              <%= form.submit "Post comment", class: "btn btn-primary btn-sm" %>
+              <%= form.button "Cancel", type: "button", class: "btn btn-outline-primary btn-sm", data: { dismiss: "modal" } %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 </div>

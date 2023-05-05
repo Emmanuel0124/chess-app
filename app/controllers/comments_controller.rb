@@ -11,11 +11,11 @@ class CommentsController < ApplicationController
 
   def create
     @comment = Comment.create(
-      content: params[:comment][:content],
-      user_id: params[:comment][:user_id],
-      game_id: params[:comment][:game_id],
+      content: params[:content],
+      user_id: current_user.id,
+      game_id: params[:id],
     )
-    redirect_to "/comments"
+    # redirect_to "/comments"
   end
   
   

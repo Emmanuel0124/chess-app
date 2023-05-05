@@ -23,4 +23,9 @@ Rails.application.routes.draw do
   get "/logout" => "sessions#destroy"
 
 
+  resources :comments
+
+  post "/games/:id" => "comments#create"
+
+
 end
