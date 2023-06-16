@@ -16,7 +16,6 @@ class GamesController < ApplicationController
       winner: params[:winner],
       image_url: params[:image_url],
     )
-    redirect_to "/games"
   end
 
   def show
@@ -36,7 +35,6 @@ class GamesController < ApplicationController
       winner: params[:winner],
       image_url: params[:image_url]
     )
-    redirect_to "/games"
   end 
 
 
