@@ -16,6 +16,7 @@ class GamesController < ApplicationController
       winner: params[:winner],
       image_url: params[:image_url],
     )
+    render :show
   end
 
   def show
@@ -35,6 +36,7 @@ class GamesController < ApplicationController
       winner: params[:winner],
       image_url: params[:image_url]
     )
+    render :show
   end 
 
 
