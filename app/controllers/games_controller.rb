@@ -12,9 +12,9 @@ class GamesController < ApplicationController
 
   def create
     @game = Game.create(
-      result: params[:game][:result],
-      winner: params[:game][:winner],
-      image_url: params[:game][:image_url],
+      result: params[:result],
+      winner: params[:winner],
+      image_url: params[:image_url],
     )
     redirect_to "/games"
   end
@@ -32,9 +32,9 @@ class GamesController < ApplicationController
   def update
     @game = Game.find_by(id: params[:id])
     @game.update(
-      result: params[:game][:result],
-      winner: params[:game][:winner],
-      image_url: params[:game][:image_url]
+      result: params[:result],
+      winner: params[:winner],
+      image_url: params[:image_url]
     )
     redirect_to "/games"
   end 
