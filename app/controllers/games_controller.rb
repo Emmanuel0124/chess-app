@@ -15,6 +15,11 @@ class GamesController < ApplicationController
       result: params[:result],
       winner: params[:winner],
       image_url: params[:image_url],
+      picture: params[:picture],
+      number_of_moves: params[:number_of_moves],
+      black_player: params[:black_player],
+      white_player: params[:white_player],
+      loser: params[:loser],
     )
     render :show
   end
@@ -34,7 +39,12 @@ class GamesController < ApplicationController
     @game.update(
       result: params[:result],
       winner: params[:winner],
-      image_url: params[:image_url]
+      image_url: params[:image_url],
+      picture: params[:picture],
+      number_of_moves: params[:number_of_moves],
+      black_player: params[:black_player],
+      white_player: params[:white_player],
+      loser: params[:loser],
     )
     render :show
   end 
