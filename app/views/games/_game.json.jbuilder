@@ -2,7 +2,7 @@ json.result game.result
 json.winner game.winner
 json.image_url game.image_url
 json.id game.id
-json.picture game.picture
+json.gif_url game.gif_url
 json.white_player game.white_player
 json.black_player game.black_player
 json.number_of_moves game.number_of_moves
