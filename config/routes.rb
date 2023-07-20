@@ -6,6 +6,11 @@ Rails.application.routes.draw do
 
   resources :games 
 
+
+  resources :games do
+    resources :comments, only: [:index, :create], controller: 'comments'
+  end
+
   # get "/games" => "games#index"
   # get "/games/:id" => "games#show"
   # post "/games" => "games#create"

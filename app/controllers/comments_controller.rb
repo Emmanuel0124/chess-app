@@ -1,7 +1,8 @@
 class CommentsController < ApplicationController
   def index
-    @comments = Comment.all
-    render :index
+    @game = Game.find(params[:game_id])
+    @comments = @game.comments
+    render json: @comments
   end
 
   def new
@@ -13,9 +14,9 @@ class CommentsController < ApplicationController
     @comment = Comment.create(
       content: params[:content],
       user_id: current_user.id,
-      game_id: params[:id],
+      game_id: params[:game_id],
     )
-    # redirect_to "/comments"
+    render :show
   end
   
   
