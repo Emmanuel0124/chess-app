@@ -28,9 +28,11 @@ Rails.application.routes.draw do
   get "/logout" => "sessions#destroy"
 
 
-  resources :comments
+  # resources :comments
 
-  post "/games/:id" => "comments#create"
+  post "/comments" => "comments#create"
+
+  # post "/games/:id" => "comments#create"
 
 
 end
