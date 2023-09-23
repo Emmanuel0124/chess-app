@@ -1,7 +1,7 @@
 class GamesController < ApplicationController
   def index
     p current_user
-    @games = Game.all
+    @games = Game.all.shuffle
     render :index
   end
 
